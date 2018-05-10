@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @DisplayName("Testing Solution class")
 @SelectPackages("com.powermilk")
-public class SolutionTest {
+class SolutionTest {
     private static final Logger log = LoggerFactory.getLogger(SolutionTest.class);
 
     @BeforeAll
@@ -33,56 +33,67 @@ public class SolutionTest {
     }
 
     @Test
-    @DisplayName("Test should passed for data provided by first example")
-    public void shouldPassForExampleArray() {
-        int[] A = {1, 2, 3};
-
-        int expected = 1;
-        int actual = new Solution().solution(A);
-
-        assertEquals(expected, actual);
-    }
-
-    @Test
     @DisplayName("Test should passed for empty array")
-    public void shouldPassForEmptyArray() {
+    void shouldPassForEmptyArray() {
         int[] A = {};
 
         int expected = 0;
         int actual = new Solution().solution(A);
 
         assertEquals(expected, actual);
+
+        log.info("Test for empty array passed!");
     }
+
+    @Test
+    @DisplayName("Test should passed for data provided by first example")
+    void shouldPassForExampleArray() {
+        int[] A = {1, 2, 3};
+
+        int expected = 1;
+        int actual = new Solution().solution(A);
+
+        assertEquals(expected, actual);
+
+        log.info("Test for first example passed!");
+    }
+
+    @Test
+    @DisplayName("Test should passed for data provided by second example")
+    void shouldPassForSecondExampleArray() {
+        int[] A = { 3, -5, 0, -1, -3 };
+
+        int expected = 2;
+        int actual = new Solution().solution(A);
+
+        assertEquals(expected, actual);
+
+        log.info("Test for second example passed!");
+    }
+
     @Test
     @DisplayName("Test should passed for custom data")
-    public void shouldPassForCustomArray() {
+    void shouldPassForCustomArray() {
         int[] A = { 2, 3, 1, 1, 3 };
 
         int expected = 1;
         int actual = new Solution().solution(A);
 
         assertEquals(expected, actual);
+
+        log.info("Test for custom data passed!");
     }
 
     @Test
     @DisplayName("Test should passed for another custom data")
-    public void shouldPassForSecondCustomArray() {
+    void shouldPassForSecondCustomArray() {
         int[] A = { 1, 1, -1, 1 };
 
         int expected = 1;
         int actual = new Solution().solution(A);
 
         assertEquals(expected, actual);
-    }
 
-    @Test
-    @DisplayName("Test should passed for data provided by second example")
-    public void shouldPassForSecondExampleArray() {
-        int[] A = { 3, -5, 0, -1, -3 };
-
-        int expected = 2;
-        int actual = new Solution().solution(A);
-
-       assertEquals(expected, actual);
+        log.info("Test for custom data passed!");
     }
 }
